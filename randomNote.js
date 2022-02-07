@@ -1,6 +1,16 @@
+/*
+Random Roam Page filtered by word or emoji
+By Erik Newhard
+https://roamresearch.com/#/app/roam-depot-developers/page/PO5Thyfe0
+*/
+
 ; (() => {
+    // SETTINGS
+    // Change this to the word or emoji contained in the page titles that you would like to appear randomly
+    var titleFilter = "🌱"
+  
     // init
-    const button_id = "randomDailyNote"
+    const button_id = "randomRoamPage"
 
     const button = document.getElementById(button_id)
     if (button) {
@@ -8,29 +18,17 @@
         return
     }
 
-    let dailyNoteIndex = 0,
-        randomDailyNotesList = shuffleArray(userDailyNotesList())
+    let roamPageIndex = 0,
+        randomRoamPagesList = shuffleArray(userFilteredPagesList())
 
     addButton()
 
 
     // functions
-    function userDailyNotesList() {
-        return window.roamAlphaAPI.q(`[:find (pull ?page [:block/uid :block/children]) :where [?page :node/title]]`)
-            .filter(x => x[0].uid.match(/\d\d-\d\d-\d\d\d\d/)) // removes pages that aren't daily notes (uid in format mm-dd-YYYY)
-            .filter(x => x[0].children) // removes pages containing no children
-            .filter(x => {
-                if (x[0].children.length == 1) {
-                    const child_id = x[0].children[0].id
-                    const child_block = window.roamAlphaAPI.pull("[:block/children, :block/string]", child_id)
-
-                    if (!child_block[':block/children'] && child_block[':block/string'] == '') {
-                        return false
-                    }
-                }
-                return true
-            }) // removes pages with one child that is blank
-            .map(x => x[0].uid) // returns only the dates
+    function userFilteredPagesList() {
+        return window.roamAlphaAPI.q(`[:find (pull ?page [:block/uid :block/children :node/title]) :where [?page :node/title]]`)
+            .filter(x => x[0].title.includes(titleFilter))
+            .map(x => x[0].uid)
     }
 
     function shuffleArray(array) {
@@ -51,9 +49,9 @@
             const button = Object.assign(document.createElement('div'), {
                 id: button_id,
                 className: "bp3-button bp3-minimal bp3-small bp3-icon-random",
-                title: `Random Daily Note (0/${randomDailyNotesList.length})`,
+                title: `Random Roam Page (0/${randomRoamPagesList.length})`,
                 style: "margin-left: 4px;",
-                onclick() { openRandomDailyNote() }
+                onclick() { openrandomRoamPage() }
             })
 
             topbar.appendChild(button)
@@ -64,14 +62,14 @@
         }
     }
 
-    function openRandomDailyNote() {
-        navigateToPage(randomDailyNotesList[dailyNoteIndex++])
+    function openrandomRoamPage() {
+        navigateToPage(randomRoamPagesList[roamPageIndex++])
 
-        document.getElementById(button_id).title = `Random Daily Note (${dailyNoteIndex}/${randomDailyNotesList.length})` // update queue position in tooltip
+        document.getElementById(button_id).title = `Random Roam Page (${roamPageIndex}/${randomRoamPagesList.length})` // update queue position in tooltip
 
-        if (dailyNoteIndex == randomDailyNotesList.length) {
-            dailyNoteIndex = 0
-            randomDailyNotesList = shuffleArray(userDailyNotesList())
+        if (roamPageIndex == randomRoamPagesList.length) {
+            roamPageIndex = 0
+            randomRoamPagesList = shuffleArray(userFilteredPagesList())
         }
     }
 
