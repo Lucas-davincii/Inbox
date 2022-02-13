@@ -29,10 +29,10 @@ body, #app {
 }
 .roam-article {
   padding-right: 10px !important;
-  padding-left: 20px !important;
+  padding-left: 10px !important;
 }
 .roam-article > div {
-  padding: 30px 50px 50px 50px;
+  padding: 20px 20px 20px 20px;
   background: var(--page-color);
   box-shadow: var(--page-shadow);
   border: 1px solid #e5ecf1;
@@ -45,7 +45,7 @@ body, #app {
   height: 100% !important;
   width: auto !important;
   position: relative !important;
-  padding-left: 50px;
+  padding-left: 5px;
 }
 .roam-main {
   width: unset !important;
@@ -89,7 +89,7 @@ div, textarea {
   border-radius: 4px;
   padding: 0.6em 0.4em;
   margin: 0.4em 0;
-}
+  }
 .block-highlight-yellow {
   background-color: white;
 }
@@ -166,6 +166,10 @@ div.roam-sidebar-container.noselect > div > div {
   display: none;
 }
 
+#right-sidebar .rm-sidebar-window {
+    margin-right: 8px;
+    margin-left: 25px;
+}
 
 /* Bullet Points */
 .rm-bullet .rm-bullet__inner {
@@ -329,7 +333,6 @@ color: white;
   color: var(--color-primary);
   font-weight: 600;
 }
-
 
 
 
