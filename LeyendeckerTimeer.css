@@ -29,10 +29,10 @@ body, #app {
 }
 .roam-article {
   padding-right: 10px !important;
-  padding-left: 10px !important;
+  padding-left: 20px !important;
 }
 .roam-article > div {
-  padding: 20px 20px 20px 20px;
+  padding: 30px 50px 50px 50px;
   background: var(--page-color);
   box-shadow: var(--page-shadow);
   border: 1px solid #e5ecf1;
@@ -45,7 +45,7 @@ body, #app {
   height: 100% !important;
   width: auto !important;
   position: relative !important;
-  padding-left: 5px;
+  padding-left: 50px;
 }
 .roam-main {
   width: unset !important;
@@ -89,7 +89,7 @@ div, textarea {
   border-radius: 4px;
   padding: 0.6em 0.4em;
   margin: 0.4em 0;
-  }
+}
 .block-highlight-yellow {
   background-color: white;
 }
@@ -166,10 +166,6 @@ div.roam-sidebar-container.noselect > div > div {
   display: none;
 }
 
-#right-sidebar .rm-sidebar-window {
-    margin-right: 8px;
-    margin-left: 25px;
-}
 
 /* Bullet Points */
 .rm-bullet .rm-bullet__inner {
@@ -333,6 +329,8 @@ color: white;
   color: var(--color-primary);
   font-weight: 600;
 }
+
+
 
 
 
@@ -534,7 +532,6 @@ span[data-link-title^="Idea/"] .rm-page-ref::before {
   background: #FDF8EE;
   border-radius: 6px;
   padding: 0.6em 0.4em 0.4em 0em;
-  margin-left: 1.5em;
 }
 
  span.rm-page-ref[data-tag="Claim"], span[data-link-title^="Claim"] .rm-page-ref {
@@ -547,7 +544,6 @@ span[data-link-title^="Idea/"] .rm-page-ref::before {
   background: #ECF5FB;
   border-radius: 6px;
   padding: 0.6em 0.4em 0.4em 0em;
-  margin-left: 1.5em;
 }
 
 span.rm-page-ref[data-tag="Questions"], span[data-link-title^="Questions"] .rm-page-ref {
@@ -560,7 +556,6 @@ span.rm-page-ref[data-tag="Questions"], span[data-link-title^="Questions"] .rm-p
   background: #9769FF2B;
   border-radius: 6px;
   padding: 0.6em 0.4em 0.4em 0em;
-  margin-left: 1.5em;
 }
 
 span.rm-page-ref[data-tag="Observations"], span[data-link-title^="Observations"] .rm-page-ref {
@@ -574,7 +569,6 @@ span.rm-page-ref[data-tag="Observations"], span[data-link-title^="Observations"]
   margin-top: 2px;
   border-radius: 6px;
   padding: 0.6em 0.4em 0.4em 0em;
-  margin-left: 1.5em;
 }
 
  span.rm-page-ref[data-tag="Response"], span[data-link-title^="Response"] .rm-page-ref {
@@ -588,7 +582,6 @@ span.rm-page-ref[data-tag="Observations"], span[data-link-title^="Observations"]
   margin-top: 2px;
   border-radius: 6px;
   padding: 0.6em 0.4em 0.4em 0em;
-  margin-left: 1.5em;
 }
 
  span.rm-page-ref[data-tag="Evidence"], span[data-link-title^="Evidence"] .rm-page-ref {
@@ -602,7 +595,6 @@ span.rm-page-ref[data-tag="Observations"], span[data-link-title^="Observations"]
   margin-top: 2px;
   border-radius: 6px;
   padding: 0.6em 0.4em 0.4em 0em;
-  margin-left: 1.5em;
 }
 
  span.rm-page-ref[data-tag="DirectQuote"], span[data-link-title^="DirectQuote"] .rm-page-ref {
@@ -610,4 +602,3 @@ span.rm-page-ref[data-tag="Observations"], span[data-link-title^="Observations"]
    font-size: 80%;
    color: #A5C16A;
 }
-
