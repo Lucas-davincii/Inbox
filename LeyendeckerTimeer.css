@@ -23,6 +23,10 @@ https://fonts.google.com/featured/Plex
     --color-subtle-border: #dbe4e8;
 }
 
+.rm-block__children.rm-level-0 {
+    margin-left: -10px;
+}
+
 /* Body Colours */
 body, #app {
   background: var(--bg-color);
@@ -529,7 +533,6 @@ span[data-link-title^="Idea/"] .rm-page-ref::before {
 /* Block Styles by Tag */
 
 /* -------------------------- */
-
 
 .roam-block-container[data-page-links*='Claim'] {
   background: #FDF8EE;
