@@ -23,10 +23,6 @@ https://fonts.google.com/featured/Plex
     --color-subtle-border: #dbe4e8;
 }
 
-.rm-block__children.rm-level-0 {
-    margin-left: -10px;
-}
-
 /* Body Colours */
 body, #app {
   background: var(--bg-color);
@@ -157,9 +153,11 @@ div.roam-sidebar-container.noselect > div > div {
   background: white;
 }
 
-.rm-block-text, .roam-block {
+.rm-block-text {
   font-size: 1.1em;
+  padding-left: 13px; !important;
 }
+
 #right-sidebar > div {
   background-color: white;
   border-left: 1px solid #e9ebef;
@@ -534,6 +532,7 @@ span[data-link-title^="Idea/"] .rm-page-ref::before {
 
 /* -------------------------- */
 
+
 .roam-block-container[data-page-links*='Claim'] {
   background: #FDF8EE;
   border-radius: 6px;
@@ -550,6 +549,7 @@ span[data-link-title^="Idea/"] .rm-page-ref::before {
   background: #ECF5FB;
   border-radius: 6px;
   padding: 0.6em 0.4em 0.4em 0em;
+  margin-left: 1.5em;
 }
 
 span.rm-page-ref[data-tag="Questions"], span[data-link-title^="Questions"] .rm-page-ref {
@@ -562,6 +562,7 @@ span.rm-page-ref[data-tag="Questions"], span[data-link-title^="Questions"] .rm-p
   background: #9769FF2B;
   border-radius: 6px;
   padding: 0.6em 0.4em 0.4em 0em;
+  margin-left: 1.5em;
 }
 
 span.rm-page-ref[data-tag="Observations"], span[data-link-title^="Observations"] .rm-page-ref {
